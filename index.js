@@ -11,7 +11,8 @@ app.post('/azure-event', (req, res) => {
         const response = {
             validationResponse: event.data.validationCode
         }
-        res.status(200).send(response)
+        console.log("Reponding back with:", response);
+        res.status(200).json(response)
     } else {
         console.log("Received event", event);
         res.status(200).send("Got it!");
